@@ -4,33 +4,32 @@ public class Brains : MonoBehaviour
 {
     Path path;
     Vehicle vehicle;
-    public int waypointIndex;
-    Vector3 nextPoint;
+    public Transform target;
+    public float minTurnAngle = 5;
 
     void Start()
     {
         vehicle = GetComponent<Vehicle>();
         path = FindObjectOfType<Path>();
-        waypointIndex = path.GetClosestWaypoint(transform.position);
-        nextPoint = path.GetWaypointPosition(waypointIndex);
+        target = path.GetClosestPoint(transform.position);
     }
 
     void Update()
     {
-        float dist = Vector3.Distance(transform.position, nextPoint);
-        Debug.DrawLine(transform.position, nextPoint,Color.red);
-        if (dist < 3)
+        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+        if (distanceToTarget < 3)
         {
-            waypointIndex = path.GetNextIndex(waypointIndex);
-            nextPoint = path.GetWaypointPosition(waypointIndex);
+            target = path.GetNextPoint(transform.position);
         }
 
+        Debug.DrawLine(transform.position, target.position,Color.red);
+        Vector3 targetDir = target.position - transform.position;
+        float angle = Vector3.SignedAngle(transform.forward, targetDir, Vector3.up);
 
-        var nextPointDir = (nextPoint - transform.position).normalized;
-        var dir = Vector3.SignedAngle(transform.forward, nextPointDir, Vector3.up);
-
-
-        vehicle.Turn(dir);
+        if (angle > minTurnAngle || angle < - minTurnAngle)
+        {
+            vehicle.Turn(angle);
+        }
         vehicle.Accelerate();
     }
 }

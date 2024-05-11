@@ -62,7 +62,9 @@ public class Vehicle : MonoBehaviour
 
 	public void Turn(float direction)
 	{
-		if (speedRatio <= 0) return; // TODO add curve
+		if (speedRatio <= 0) return;
+		direction = Mathf.Clamp(direction, -1, 1);
+
 		transform.Rotate(0, direction * turnSpeed * Time.deltaTime, 0);
 	}
 }

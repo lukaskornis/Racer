@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24f393298b4e4825be08a9c8b42877d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  points: []
 --- !u!4 &236222508
 Transform:
   m_ObjectHideFlags: 0
@@ -253,12 +253,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 616947971347039634, guid: ba990ad7a25164edfa2682a6bed4022a, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 616947971347039634, guid: ba990ad7a25164edfa2682a6bed4022a, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 616947971347039634, guid: ba990ad7a25164edfa2682a6bed4022a, type: 3}
+      propertyPath: acceleration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6391492464462391556, guid: ba990ad7a25164edfa2682a6bed4022a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: 17.09
       objectReference: {fileID: 0}
     - target: {fileID: 6391492464462391556, guid: ba990ad7a25164edfa2682a6bed4022a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -266,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6391492464462391556, guid: ba990ad7a25164edfa2682a6bed4022a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.8
+      value: 31.1
       objectReference: {fileID: 0}
     - target: {fileID: 6391492464462391556, guid: ba990ad7a25164edfa2682a6bed4022a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -300,6 +308,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
+    - target: {fileID: 8431816605770296032, guid: ba990ad7a25164edfa2682a6bed4022a, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 835320845}
     - target: {fileID: 8431816605770296032, guid: ba990ad7a25164edfa2682a6bed4022a, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -538,7 +550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 835320845}
   m_Layer: 0
-  m_Name: Waypoint
+  m_Name: Waypoint (0)
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -641,7 +653,7 @@ Transform:
   m_GameObject: {fileID: 1085596258}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 0, z: 7.4}
+  m_LocalPosition: {x: 15, y: 2.37, z: 7.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1055,7 +1067,7 @@ Transform:
   m_GameObject: {fileID: 1951773337}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.6, y: 0, z: 30.4}
+  m_LocalPosition: {x: -1.63, y: 0, z: 34.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
